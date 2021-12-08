@@ -1,0 +1,835 @@
+// 
+// user.scss
+// Use this to write your custom SCSS
+//
+
+// 
+// user.scss
+// Use this to write your custom SCSS
+//
+
+//Import the components
+// @import 'components/animations';
+// @import 'components/buttons';
+// @import 'components/mixins';
+// @import 'components/typography';
+
+
+// Import Custom Variables
+@import 'user-variables.scss';
+
+// Font Awesome
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+
+
+// Mixin
+// Absolute Center
+@mixin absoluteCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+//////////////////////////
+/// Website sections ////
+////////////////////////
+
+// 
+////
+// Companies';
+//// 
+// 
+.companies {
+    padding: 0 0 5rem 0;
+
+    &__logo-box {
+        max-width: 100%;
+        height: 3rem;
+        margin-bottom: 2rem;
+        padding: .5rem;
+        text-align: center;
+        position: relative;
+
+        img {
+            height: 100%;
+
+            &:hover {
+                filter: grayscale(120);
+            }
+        }
+    }
+}
+
+
+// 
+////
+// Contact-form';
+////
+// 
+.contact-form,
+.contact-form-title,
+.contact-form-info,
+.contact-form-statement{
+    font-family: $font;
+    font-weight: lighter;
+}
+
+
+// 
+//// 
+// Faq';
+//// 
+// 
+
+//
+////
+// Footer';
+//// 
+// 
+.footer {
+    padding-top: 1rem;
+    background-color: $footer;
+}
+
+// STYLE THE CONTACT-BOX CONTENT
+.contact-box {
+    position: relative;
+
+    &__icon {
+        width: 2rem;
+        stroke: $primary;
+        padding-top: 0.5rem;
+
+        @include media-breakpoint-up(sm){
+            width: 4rem;
+        }
+
+        @include media-breakpoint-up(md){
+            width: 3rem;
+        }
+
+
+    }
+    
+    &__info {
+        padding: 0.4rem;
+        font-size: 1rem;
+        font-weight: 400;
+
+        &--title {
+            color: $white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 100;
+
+            @include media-breakpoint-up(sm){
+                font-size: 1.4rem;
+            }
+
+            @include media-breakpoint-up(md){
+                font-size: 1rem;
+            }
+        }
+
+        &--subtitle {
+            font-size: 0.8rem;
+            color: #9696f9;
+            text-decoration: none;
+
+            @include media-breakpoint-up(sm){
+                font-size: 1rem;
+            }
+        }
+    }   
+
+}
+
+// STYLE THE SOCIAL MEDIA CONTENT
+.footer-sm {
+
+    a {
+        color: $white;
+
+        i {
+            font-size: 1rem;
+            margin-left: 1rem;
+
+            @include media-breakpoint-up(sm){
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+
+// STYLE THE COMPANY INFO CONTENT
+.company-list {
+    display: block;
+    list-style-type: none;
+    position: relative;
+
+    li {
+        margin-bottom: 0.5rem;
+        text-decoration: none;
+
+        a {
+            color: $gray-200;
+            text-decoration: none;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+}
+
+//STYLE THE COPYRIGHT CONTENT
+.footer-bottom {
+    background-color: $black;
+
+    &__copyright {
+        color: $gray-600;
+        font-weight: 400;
+
+        a {
+            color: $gray-300;
+            text-decoration: none;
+
+            &:hover {
+                color: $primary;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// STYLE THE BACK TO TOP BUTTON
+.back-to-top {
+    position: fixed;
+    width: 3rem;
+    height: 3rem;
+    right: 1.875rem;
+    bottom: 1.875rem;
+    z-index: 9999;
+    background-color: #093f68;
+
+    i {
+        color: $white;
+        font-size: 1rem;
+        // @include absoluteCenter;
+    }
+}
+
+// 
+////
+// Get_started';
+//// 
+// 
+
+// 
+//// 
+// Intro';
+//// 
+// 
+.intro-section {
+    // @include gradient;
+    padding: 10rem 0 0 0;
+    width: 100%;
+    height: 100%;
+    font-family: $font;
+    background-color: rgb(253, 246, 255);
+}
+
+// .intros {
+//     .video-box {
+//         @include absoluteCenter;
+
+//         a {
+//             position: absolute;
+
+//             span {
+
+//                 i {
+//                     font-size: 6rem;
+//                     color: $black;
+
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+// 
+//// 
+// Navbar';
+//// 
+// 
+.menu {
+    // background-color: #6969f8;
+    background-color: $primary;
+
+    li {
+        padding: 0 0.7rem;
+        color: white !important;
+        text-transform: capitalize;
+        font-weight: 400;
+    }
+}
+
+
+//
+//// 
+// Services';
+//// 
+// 
+.services {
+    position: relative;
+    padding: 1rem 0;
+    font-family: $font;
+
+    &__content {
+        padding: 1rem;
+        margin-top: 3rem;
+
+        p {
+            font-size: 0.8rem;
+            
+            @include media-breakpoint-up(lg) {
+                margin-top: 1rem;
+            }
+        }
+
+        @include media-breakpoint-up(lg){
+            margin-top: 5rem;
+        }
+
+        .icon {
+            font-size: 1.5rem;
+            color: #9696f8;
+
+            @include media-breakpoint-up(lg){
+                margin-top: 2.5rem;
+            }
+        }
+    }
+
+    &__pic {
+        max-width: 100%;
+    }
+}
+
+.alert {
+    font-size: 1rem;
+}
+
+.display-3, .service-title {
+    color: #9696f8;
+}
+
+.intro-statement {
+    color: $gray-600;
+    font-size: 1.5rem;
+}
+
+
+// 
+////
+// Testmonials';
+////
+//
+
+.testimonials,.testmonial {
+    font-family: $font;
+    position: relative;
+    padding: 0;
+    // background-color: $gray-100;
+
+    &__card {
+        // background-color: rgba( 226, 222, 222);
+        padding: 2rem 1.25rem;
+        border-radius: 0.625rem;
+        height: auto;
+        text-align: center;
+
+        i {
+            font-size: 1.5rem;
+            color: rgba($primary, 0.7);
+        }
+
+        .ratings {
+
+            i {
+                font-size: 1.5rem;
+                color: rgba($primary, 0.7);
+            }
+        }
+    }
+
+    &__picture {
+        width: 8rem;
+        height: 8rem;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        img {
+            border: 0.325rem solid rgba($primary,0.7);
+        }
+
+    }
+
+    &__name {
+        padding-top: 4rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        font-weight: 500;
+        color: $chcle;
+
+        h3 {
+            padding-top: 0.8rem;
+            text-transform: capitalize;
+        }
+
+        p {
+            padding-bottom: 2rem;
+            text-transform: capitalize;
+        }
+    }
+}
+
+.picture {
+    width: 8rem;
+    height: 8rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    img {
+        border: 0.325rem solid rgba($primary,0.7);
+    }
+
+}
+
+
+// 
+////
+// Portfolio';
+////
+// 
+
+
+// 
+////
+// Pricing_insurance';
+////
+// 
+body {
+    font-family: $font;
+}
+
+.bg-info {
+    background-color: $primary;
+
+}
+
+.service-title {
+    color: #9696f8;
+}
+
+.table {
+
+    tbody {
+
+        .t-default {
+            background-color: $gray-100;
+        }
+
+        .t-secondary {
+            background-color: $gray-200;
+        }
+
+        tr {
+
+            th {
+
+                .row {
+                    text-decoration: none;
+                    font-style: normal;
+                    font-weight: 300;
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+// faq -- badge  
+.badge.bg-primary-soft {
+    background-color: rgba(51,94,234,.1);
+    color: #9696f8;
+}
+
+.badge-rounded-circle.badge-lg {
+    height: 2.4em;
+    padding-left: .7em;
+    padding-right: .7em;
+    // display: block;
+    // width: 1rem;
+}
+
+.badge-rounded-circle {
+    border-radius: 50rem;
+    height: calc(1em + .5rem);
+    padding-left: .25rem;
+    padding-right: .25rem;
+}
+
+// 
+*,::after,::before {
+    box-sizing: border-box;
+}
+
+
+// Links 
+.appt.faq_link.contact_links {
+    text-decoration: none;
+    color: #9696f8;
+}
+
+.insurance-section,.card {
+    font-family: $font;
+}
+
+.ii-discount,.ii-payments,.ii-c-policy,.ii-intake,.ii-contact {
+
+    margin-left: 49%;
+}
+
+
+// 
+////
+// Resources';
+////
+// 
+#resources {
+    font-family: $font;
+}
+
+.physical-health-title,.mental-health-title {
+    color: #6969f8;
+}
+
+.mental-health,.physical-health {
+    color: #6969f8;
+    font-size: 1rem;
+}
+
+.external-links {
+    text-decoration: none;
+    font-size: .9rem;
+
+    &:hover {
+        color: $primary;
+        text-decoration: wavy;
+    }
+}
+
+
+// 
+////
+// Reviews';
+////
+//
+.reviews,.reviews-bg {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    font-family: $font;
+    color: #252627;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    background-color: #262262;
+    overflow: hidden;
+    padding-top: 100px;
+    padding-bottom: 98px;
+}
+
+.reviews,.container-section {
+    max-width: 1130px;
+
+
+    @media screen and (min-width: 992px){
+        padding-left: 0;
+        padding-right: 0;
+    }   
+}
+
+.container-section {
+    margin-right: auto;
+    margin-right: auto;
+    width: 94%;
+    min-width: 1430px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @media (min-width: 992px) {
+        width: 970px;    
+    }
+
+    @media (min-width: 768px) {
+        width: 750px;    
+    }
+
+}
+
+.review-1 {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: -25px;
+    margin-right: -25px;
+
+    @media screen and (min-width: 992px) {
+        justify-content: space-between;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    display: block;
+}
+
+.review-1,.item {
+    width: calc(100% - 50px);
+    background-color: #fff;
+    padding-top: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 28px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    text-align: center;
+
+
+    @media  screen and (min-width: 992px) {
+        width: calc(50% - 50px);
+        margin-bottom: 50px;
+    }
+
+    @media screen and (min-width: 680px) {
+        width: calc(75% - 50px);
+        
+    }
+}
+
+
+// 
+////
+// Terms';
+////
+// 
+.terms {
+    font-family: $font;
+}
+
+//
+////
+// Typography
+////
+// 
+.page {
+    font-family: $font;
+}
+
+.display-6 {
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    font-family: $font;
+
+    &--intro {
+        display: inline-block;
+        font-weight: 300;
+        font-family: $font;
+    }
+
+    &--description {
+        font-size: 1rem;
+        display: block;
+        margin-top: 1rem;
+        text-transform: none;
+
+        @include media-breakpoint-up(lg){
+            font-size: 1.5rem;
+            display: inline-block;
+        }
+    }
+}
+
+// Heading Line
+.heading-line::before {
+    content: "";
+    width: 10rem;
+    height: 0.1rem;
+    display: block;
+    margin: 0 auto;
+    background-color: $primary;
+}
+.heading-line::after {
+    content: "";
+    width: 2rem;
+    padding-top: .5rem;
+    height: 0.2rem;
+    display: block;
+    margin: auto;
+    margin-bottom: 1rem;
+    background-color: $primary;
+}
+
+.telephone {
+    text-align: center;
+    
+}
+
+// Display Three
+.display-3 {
+    font-family: $font;
+
+    &--title {
+        font-size: 1.2rem;
+        text-transform: capitalize;
+        font-weight: 600;
+        font-family: $font;
+        display: inline-block;
+        // background-image: linear-gradient(to right, $primary, $secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @include media-breakpoint-up(lg){
+            margin-top: 1.8rem;
+        }
+    }
+
+}
+
+// Border-right
+.border-right {
+    border-right: .1rem solid $gray-300;
+    height: 200%;
+}
+
+.faq,.footer {
+    font-family: $font;
+}
+
+
+// Pricing and insurance
+.pricing-insurance {
+    font-family: $font;    
+}
+
+
+.display-5 {
+    color: #9696f8;
+}
+
+.table_title {
+    color: #9696f8;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
+
+// 
+////
+// Buttons
+////
+// 
+.btn-rounded {
+    @include media-breakpoint-up(sm) {
+        display: none;
+
+        &:hover {
+            // @include gradient;
+    
+            background-color: $primary;
+            color: $white;
+    
+            .telephone {
+                color: $white;
+            }
+    
+            span {
+                background-color: rgba($black,0.6);
+            }
+        }
+    }
+
+    position: relative;
+    padding: 0.9375rem 4.375rem 0.9375rem 1.2rem;
+    font-weight: 300;
+    margin: 0;
+    border: 0.1rem solid rgba(white, 0.6);
+    background-color: $white;
+    color: $primary;
+
+    span {
+        position: absolute;
+        background-color: $primary;
+        width: 2.5rem;
+        height: 2.5rem;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+        border-radius: 50%;
+
+        i {
+            color: $white !important;
+            font-size: 1rem;
+            line-height: 2.5rem;
+        }
+    }
+
+    a {
+        color: #9696f8;
+
+        // &:hover {
+        //     @include gradient;
+        //     color: $white;
+        // }        
+    }
+
+    &:hover {
+        // @include gradient;
+
+        background-color: $primary;
+        color: $white;
+
+        .telephone {
+            color: $white;
+        }
+
+        span {
+            background-color: rgba($black,0.6);
+        }
+    }
+}
+
+
+// 
+////
+// 
+////
+//
+
+
